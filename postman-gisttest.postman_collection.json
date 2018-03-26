@@ -1,0 +1,295 @@
+{
+	"info": {
+		"name": "postman-gisttest",
+		"_postman_id": "9f716bd1-ea04-2c35-4bc0-9390c66ce943",
+		"description": "Diperuntukan untuk API gitsTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createTodo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Todo 2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "priority",
+							"value": "2",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "Bandung",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "time_start",
+							"value": "18:00",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "aagung",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "10051995",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/todo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todo"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "deleteTodo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/todo/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todo",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getTodoById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/todo/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todo",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getAllTodo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/todo?mode=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todo"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "1",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getAllTodoOrderBy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/todo?mode=3&order_by=priority&order_type=desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todo"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "3",
+							"equals": true
+						},
+						{
+							"key": "order_by",
+							"value": "priority",
+							"equals": true,
+							"description": "semua field yang ada ditable"
+						},
+						{
+							"key": "order_type",
+							"value": "desc",
+							"equals": true,
+							"description": "asc atau desc"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "getAllTodoByStatus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/todo?mode=2&status=done",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todo"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "2",
+							"equals": true
+						},
+						{
+							"key": "status",
+							"value": "done",
+							"equals": true,
+							"description": "todo atau done"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "updateTodo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Todo 1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "priority",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "Bandung",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "time_start",
+							"value": "18:00",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "aagung",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "10051995",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "DONE",
+							"description": "TODO atau DONE",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/todo/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todo",
+						"1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
