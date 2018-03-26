@@ -6,17 +6,17 @@ router.get('/:id?', function(req, res, next) {
 	if(req.params.id) {
 		Todo.getTodoById(req.params, function(err, data) {
 			if(err) {
-				res.json(err);
+				res.json({'code': 200, 'status': 'error', 'message': 'Ada sesuatu yang salah.', 'data': err});
 			} else {
-				res.json(data);
+				res.json({'code': 200, 'status': 'success', 'data': data});
 			}
 		});
 	} else {
 		Todo.getAllTodos(req.query, function(err, data) {
 			if(err) {
-				res.json(err);
+				res.json({'code': 200, 'status': 'error', 'message': 'Ada sesuatu yang salah.', 'data': err});
 			} else {
-				res.json(data);
+				res.json({'code': 200, 'status': 'success', 'data': data});
 			}
 		});
 	}
@@ -25,9 +25,9 @@ router.get('/:id?', function(req, res, next) {
 router.post('/', function(req, res, next) {
 	Todo.addTodo(req.body, function(err, status) {
 		if(err) {
-			res.json(err);
+			res.json({'code': 200, 'status': 'error', 'message': 'Ada sesuatu yang salah.', 'data': err});
 		} else {
-			res.json(req.body);
+			res.json({'code': 200, 'status': 'success', 'message': 'Berhasil Disimpan.', 'data': req.body});
 		}
 	}); 
 });
@@ -35,9 +35,9 @@ router.post('/', function(req, res, next) {
 router.put('/:id', function(req, res, next) {
 	Todo.updateTodo(req.params.id, req.body, function(err, data) {
 		if(err) {
-			res.json(err);
+			res.json({'code': 200, 'status': 'error', 'message': 'Ada sesuatu yang salah.', 'data': err});
 		} else {
-			res.json(data);
+			res.json({'code': 200, 'status': 'success', 'message': 'Berhasil Diubah.', 'data': data});
 		}
 	}); 
 });
@@ -45,9 +45,9 @@ router.put('/:id', function(req, res, next) {
 router.delete('/:id', function(req, res, next) {
 	Todo.deleteTodo(req.params, function(err, status) {
 		if(err) {
-			res.json(err);
+			res.json({'code': 200, 'status': 'error', 'message': 'Ada sesuatu yang salah.', 'data': err});
 		} else {
-			res.json('Data Berhasil Dihapus');
+			res.json({'code': 200, 'status': 'success', 'message': 'Berhasil Dihapus.', 'data': status});
 		}
 	}); 
 });
